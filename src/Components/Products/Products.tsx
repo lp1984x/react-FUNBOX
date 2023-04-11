@@ -1,31 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import { Container } from "react-bootstrap";
+import { useAppSelector } from "../../store/store";
+import Prod from "../Prod/Prod";
 
 export default function Products() {
-  const [info, setInfo] = useState([
-    {
-      top: "Сказочное заморское яство",
-      head: "Нямушка",
-      taste: "с фуа-гра",
-      portion: "10 порций мышь в подарок",
-      weight: "0,5",
-      active: true,
-    },
-    {
-      top: "Сказочное заморское яство",
-      head: "Нямушка",
-      taste: "с рыбой",
-      portion: "40 порций 2 мыши в подарок",
-      weight: "2",
-      active: true,
-    },
-    {
-      top: "Сказочное заморское яство",
-      head: "Нямушка",
-      taste: "с курой",
-      portion: "100 порций 5 мышей в подарок заказчик доволен",
-      weight: "5",
-      active: false,
-    },
-  ]);
-  return {};
+  const prods = useAppSelector((state) => state.prod.prods);
+  return (
+    <Container className="d-flex flex-wrap justify-content-center">
+      {prods.map((item) => (
+        <Prod props={item} key={item.id} />
+      ))}
+    </Container>
+  );
 }
