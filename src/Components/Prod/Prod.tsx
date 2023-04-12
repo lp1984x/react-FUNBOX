@@ -1,14 +1,18 @@
 import React from "react";
 import { IProd } from "../../models";
+import { useAppDispatch } from "../../store/store";
+import { handlChkd } from "../../store/features/prodSlice";
 
 interface ProdProps {
   props: IProd;
 }
 
 export default function Prod({ props }: ProdProps) {
+  const dispatch = useAppDispatch();
+  const chkd = () => dispatch(handlChkd(props));
   return (
     <div className="block">
-      <div className="block__content cursor">
+      <div className="block__content cursor" onClick={chkd}>
         <div className="dis"></div>
         <div className="bef brd"></div>
         <div className="block__bevel">
@@ -33,7 +37,16 @@ export default function Prod({ props }: ProdProps) {
         </div>
       </div>
       <p className="block__buy">
-        Чего сидишь? Порадуй котэ, <span>купи.</span>
+        {props.check ? (
+          props.footer
+        ) : (
+          <>
+            Чего сидишь? Порадуй котэ,
+            <div className="buy-btn" onClick={chkd}>
+              <span>купи</span>.
+            </div>
+          </>
+        )}
       </p>
     </div>
   );

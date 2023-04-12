@@ -7,5 +7,7 @@ export interface IProd {
       present?:string,
       bonus?:string
       weight:string,
-      active:boolean
+      active:boolean,
+      check:boolean,
+      footer:string
     }

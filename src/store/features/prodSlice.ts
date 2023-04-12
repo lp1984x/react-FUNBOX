@@ -19,6 +19,8 @@ export const ProdSlice = createSlice({
         present:"мышь в подарок",
         weight: "0,5",
         active: true,
+        check:false,
+        footer:"Печень утки разварная с артишоками."
       },
       {
         id: 2,
@@ -29,6 +31,8 @@ export const ProdSlice = createSlice({
         present:"2 мыши в подарок",
         weight: "2",
         active: true,
+        check:false,
+        footer:"Головы щучьи с чесноком да свежайшая сёмгушка."
       },
       {
         id: 3,
@@ -40,14 +44,16 @@ export const ProdSlice = createSlice({
         bonus:"заказчик доволен",
         weight: "5",
         active: false,
+        check:false,
+        footer:"Филе из цыплят с трюфелями в бульоне."
       },
     ],
   },
   reducers: {
-    handlActive: (state, action: PayloadAction<IProd>) => {
-      //state.prods[action.payload.id] = true
+    handlChkd: (state, action: PayloadAction<IProd>) => {
+      state.prods[action.payload.id-1].check = !state.prods[action.payload.id-1].check
     },
   },
 });
 export default ProdSlice.reducer;
-//export const {} = ProdSlice.actions
+export const {handlChkd} = ProdSlice.actions

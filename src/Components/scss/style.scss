@@ -157,7 +157,7 @@ body {
   &__circle {
     position: absolute;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     flex-direction: column;
     height: 80px;
@@ -185,18 +185,21 @@ body {
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
-    line-height: 16px;
     text-align: center;
     color: #ffffff;
     margin-top: 16px;
     padding-bottom: 67px;
     cursor: default;
-    span {
+    .buy-btn {
+      display: inline-block;
       color: $primaryColor;
-      text-decoration: underline dashed;
-      cursor: pointer;
+
+      span {
+        border-bottom: dashed 1px;
+        cursor: pointer;
+      }
     }
-    span:hover {
+    .buyBtn:hover {
       color: $hoverColor;
     }
   }
