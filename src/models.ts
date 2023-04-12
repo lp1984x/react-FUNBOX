@@ -4,6 +4,8 @@ export interface IProd {
       head:string,
       taste:string,
       portion:string,
+      present?:string,
+      bonus?:string
       weight:string,
       active:boolean
     }
