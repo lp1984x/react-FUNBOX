@@ -20,7 +20,8 @@ export const ProdSlice = createSlice({
         weight: "0,5",
         active: true,
         check:false,
-        footer:"Печень утки разварная с артишоками."
+        footer:"Печень утки разварная с артишоками.",
+        footend:"Печалька, с фуа-гра закончился."
       },
       {
         id: 2,
@@ -32,7 +33,8 @@ export const ProdSlice = createSlice({
         weight: "2",
         active: true,
         check:false,
-        footer:"Головы щучьи с чесноком да свежайшая сёмгушка."
+        footer:"Головы щучьи с чесноком да свежайшая сёмгушка.",
+        footend:"Печалька, с рыбой закончился."
       },
       {
         id: 3,
@@ -45,7 +47,8 @@ export const ProdSlice = createSlice({
         weight: "5",
         active: false,
         check:false,
-        footer:"Филе из цыплят с трюфелями в бульоне."
+        footer:"Филе из цыплят с трюфелями в бульоне.",
+        footend:"Печалька, с курой закончился."
       },
     ],
   },

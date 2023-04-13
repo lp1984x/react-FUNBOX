@@ -2,6 +2,7 @@ import React from "react";
 import { IProd } from "../../models";
 import { useAppDispatch } from "../../store/store";
 import { handlChkd } from "../../store/features/prodSlice";
+import "./prod.scss";
 
 interface ProdProps {
   props: IProd;
@@ -12,11 +13,13 @@ export default function Prod({ props }: ProdProps) {
   const chkd = () => dispatch(handlChkd(props));
   return (
     <div className="block">
+      <div className={props.active ? "" : "dis"}></div>
       <div className="block__content cursor" onClick={chkd}>
-        <div className="dis"></div>
-        <div className="bef brd"></div>
+        <div className={props.check ? "bef brd-chk" : "bef brd"}></div>
         <div className="block__bevel">
-          <p className="block__toptext mb-2">{props.top}</p>
+          <p className="block__toptext mb-2">
+            {props.check ? "Котэ не одобряет?" : props.top}
+          </p>
         </div>
         <div className="aft brd"></div>
         <div className="block__section brd border-top-0">
@@ -36,18 +39,19 @@ export default function Prod({ props }: ProdProps) {
           </div>
         </div>
       </div>
-      <p className="block__buy">
-        {props.check ? (
-          props.footer
-        ) : (
-          <>
-            Чего сидишь? Порадуй котэ,
-            <div className="buy-btn" onClick={chkd}>
-              <span>купи</span>.
-            </div>
-          </>
-        )}
-      </p>
+
+      {props.check ? (
+        props.footer
+      ) : props.active ? (
+        <p className="block__buy">
+          Чего сидишь? Порадуй котэ,
+          <div className="buy-btn" onClick={chkd}>
+            <span>купи</span>.
+          </div>
+        </p>
+      ) : (
+        <p className="block__buy ">{props.footend}</p>
+      )}
     </div>
   );
 }

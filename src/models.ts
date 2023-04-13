@@ -9,5 +9,6 @@ export interface IProd {
       weight:string,
       active:boolean,
       check:boolean,
-      footer:string
+      footer:string,
+      footend:string
     }

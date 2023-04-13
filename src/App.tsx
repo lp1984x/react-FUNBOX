@@ -1,7 +1,7 @@
 import React from "react";
-import "./Components/scss/style.scss";
 import Products from "./Components/Products/Products";
 import Header from "./Components/Header/Header";
+import "./app.scss";
 
 function App() {
   return (
