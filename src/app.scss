@@ -1,6 +1,5 @@
 $bgIm: url(./Components/img/bg.png);
 
-html,
 body {
   height: 100%;
   line-height: 1;
@@ -9,6 +8,10 @@ body {
   background: $bgIm repeat;
 }
 .gradient {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   background: linear-gradient(
     180deg,

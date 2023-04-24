@@ -1,6 +1,7 @@
 export interface IProd {
       id:number,
       top:string,
+      alt_top:string,
       head:string,
       taste:string,
       portion:string,

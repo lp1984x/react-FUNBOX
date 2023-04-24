@@ -13,6 +13,7 @@ export const ProdSlice = createSlice({
       {
         id: 1,
         top: "Сказочное заморское яство",
+        alt_top: "Котэ не одобряет?",
         head: "Нямушка",
         taste: "с фуа-гра",
         portion: "10 порций" ,
@@ -26,6 +27,7 @@ export const ProdSlice = createSlice({
       {
         id: 2,
         top: "Сказочное заморское яство",
+        alt_top: "Котэ не одобряет?",
         head: "Нямушка",
         taste: "с рыбой",
         portion: "40 порций",
@@ -39,6 +41,7 @@ export const ProdSlice = createSlice({
       {
         id: 3,
         top: "Сказочное заморское яство",
+        alt_top: "Котэ не одобряет?",
         head: "Нямушка",
         taste: "с курой",
         portion: "100 порций",

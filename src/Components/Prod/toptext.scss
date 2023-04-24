@@ -1,0 +1,19 @@
+@import "colors";
+
+.block__toptext,
+.block__toptext-chk,
+.block__toptext-alt {
+  font-size: 16px;
+  color: rgb(102, 102, 102);
+  margin-left: 15%;
+}
+.block__toptext-alt {
+  display: none;
+}
+.block__content:hover .block__toptext-alt {
+  display: inline-block;
+  color: $selectedHoverColor;
+}
+.block__content:hover .block__toptext-chk {
+  display: none;
+}

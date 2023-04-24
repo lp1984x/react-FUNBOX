@@ -1,0 +1,45 @@
+@import "colors";
+
+.block__circle,
+.block__circle-disable,
+.block__circle-chk {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  right: 16px;
+  bottom: 16px;
+  background: $primaryColor;
+  color: #ffffff;
+}
+.block__circle-chk {
+  background: $selectedColor;
+}
+.block__circle-disable {
+  background: $disabledColor;
+}
+.block__content:hover .block__circle {
+  background-color: $hoverColor;
+}
+.block__content:hover .block__border-chk {
+  border-color: $selectedHoverColor;
+}
+.block__content:hover .block__circle-chk {
+  background-color: $selectedHoverColor;
+}
+
+.block__weight {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 32px;
+  pointer-events: none;
+}
+.block__kg {
+  font-size: 21px;
+  line-height: 1px;
+}

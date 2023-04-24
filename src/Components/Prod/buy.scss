@@ -1,0 +1,21 @@
+@import "colors";
+
+.block__buy {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 16px;
+  padding-bottom: 67px;
+  cursor: default;
+}
+.block__buy-btn {
+  display: inline-block;
+  color: $primaryColor;
+  border-bottom: dashed 1px;
+  cursor: pointer;
+}
+.block__buy-btn:hover {
+  color: $hoverColor;
+}

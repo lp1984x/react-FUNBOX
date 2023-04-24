@@ -1,0 +1,31 @@
+@import "colors";
+
+.block__content,
+.block__content-disable {
+  position: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.block__content-disable {
+  pointer-events: none;
+}
+
+.block__border {
+  border: 4px solid $primaryColor;
+}
+.block__border-chk {
+  border: 4px solid $selectedColor;
+}
+.block__border-disable {
+  border: 4px solid $disabledColor;
+}
+
+.block__content:hover .block__border {
+  border-color: $hoverColor;
+}
