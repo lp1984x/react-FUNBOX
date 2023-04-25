@@ -1,0 +1,35 @@
+@import "colors";
+
+.block__back,
+.block__back-select,
+.block__back-disable {
+  position: relative;
+  width: 320px;
+  min-height: 480px;
+  padding: 4px;
+  border-radius: 10px;
+  top: -4px;
+  left: -4px;
+  background-color: $primaryColor;
+  background: linear-gradient(135deg, transparent 31px, $primaryColor 0);
+}
+
+.block__back:hover {
+  background-color: $hoverColor;
+  background: linear-gradient(135deg, transparent 31px, $hoverColor 0);
+}
+
+.block__back-select {
+  background-color: $selectedColor;
+  background: linear-gradient(135deg, transparent 31px, $selectedColor 0);
+}
+
+.block__back-select:hover {
+  background-color: $selectedHoverColor;
+  background: linear-gradient(135deg, transparent 31px, $selectedHoverColor 0);
+}
+
+.block__back-disable {
+  background-color: $disabledColor;
+  background: linear-gradient(135deg, transparent 31px, $disabledColor 0);
+}

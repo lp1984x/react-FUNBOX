@@ -1,5 +1,7 @@
 $bgIm: url(./Components/img/bg.png);
-
+html {
+  height: 100%;
+}
 body {
   height: 100%;
   line-height: 1;
@@ -7,12 +9,18 @@ body {
   font-family: "Trebuchet MS";
   background: $bgIm repeat;
 }
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .gradient {
+  min-height: 100px;
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.5) 0%,

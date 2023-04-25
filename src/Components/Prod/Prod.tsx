@@ -4,8 +4,7 @@ import { useAppDispatch } from "../../store/store";
 import { handlChkd } from "../../store/features/prodSlice";
 import "./block.scss";
 import "./content.scss";
-import "./bevel.scss";
-import "./section.scss";
+import "./back.scss";
 import "./toptext.scss";
 import "./niamushka.scss";
 import "./taste.scss";
@@ -13,7 +12,7 @@ import "./portion.scss";
 import "./cat.scss";
 import "./circle.scss";
 import "./buy.scss";
-import Disable from "../Disable/Disable";
+import Disabled from "../Disable/Disabled";
 
 interface ProdProps {
   props: IProd;
@@ -21,8 +20,9 @@ interface ProdProps {
 
 export default function Prod({ props }: ProdProps) {
   const dispatch = useAppDispatch();
-  const chkd = () => dispatch(handlChkd(props));
-  const circleDisable = (active: boolean, chek: boolean) => {
+  const select = () => dispatch(handlChkd(props));
+
+  const circleSelectDisable = (active: boolean, chek: boolean) => {
     if (active !== true) {
       return "block__circle-disable";
     } else if (chek) {
@@ -32,25 +32,24 @@ export default function Prod({ props }: ProdProps) {
     }
   };
 
-  const brdDisable = (active: boolean, chek: boolean) => {
+  const backSelectDisable = (active: boolean, chek: boolean) => {
     if (active !== true) {
-      return "block__border-disable";
+      return "block__back-disable";
     } else if (chek) {
-      return "block__border-chk";
+      return "block__back-select";
     } else {
-      return "block__border";
+      return "block__back";
     }
   };
 
   return (
-    <div className="block">
-      <div
-        className={props.active ? "block__content" : "block__content-disable"}
-        onClick={chkd}
-      >
-        {props.active === false && <Disable />}
-        <div className={"bef " + brdDisable(props.active, props.check)}></div>
-        <div className="block__bevel">
+    <section className="block">
+      {props.active === false && <Disabled />}
+      <div className={backSelectDisable(props.active, props.check)}>
+        <div
+          className={props.active ? "block__content" : "block__content-disable"}
+          onClick={select}
+        >
           <p
             className={
               props.check ? "block__toptext-chk mb-2" : "block__toptext mb-2"
@@ -61,14 +60,6 @@ export default function Prod({ props }: ProdProps) {
           {props.check && (
             <p className="block__toptext-alt mb-2">{props.alt_top}</p>
           )}
-        </div>
-        <div className={"aft " + brdDisable(props.active, props.check)}></div>
-        <div
-          className={
-            "block__section border-top-0 " +
-            brdDisable(props.active, props.check)
-          }
-        >
           <p className="block__niamushka">{props.head}</p>
           <p className="block__taste">{props.taste}</p>
           <p className="block__portions">
@@ -78,8 +69,10 @@ export default function Prod({ props }: ProdProps) {
             <br />
             {props.bonus && props.bonus}
           </p>
+
           <img src="../image/cat.png" alt="" className="block__cat" />
-          <div className={circleDisable(props.active, props.check)}>
+
+          <div className={circleSelectDisable(props.active, props.check)}>
             <p className="block__weight">{props.weight}</p>
             <p className="block__kg">кг</p>
           </div>
@@ -91,13 +84,13 @@ export default function Prod({ props }: ProdProps) {
       ) : props.active ? (
         <p className="block__buy">
           Чего сидишь? Порадуй котэ,{" "}
-          <a href="#none" className="block__buy-btn" onClick={chkd}>
+          <a href="#none" className="block__buy-btn" onClick={select}>
             купи.
           </a>
         </p>
       ) : (
         <p className="block__buy text-warning">{props.footend}</p>
       )}
-    </div>
+    </section>
   );
 }
